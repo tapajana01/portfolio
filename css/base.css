@@ -1,0 +1,63 @@
+/* ========================================
+   css/base.css
+   Base styles, resets, and typography
+   ======================================== */
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Document Styles */
+body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-secondary);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text-primary);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-4);
+}
+
+p {
+    margin-bottom: var(--space-4);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* Fluid Images */
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Accessible Focus States */
+*:focus {
+    outline: none; /* Remove default outline to replace with focus-visible */
+}
+
+*:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}

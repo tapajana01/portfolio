@@ -1,0 +1,193 @@
+/* ========================================
+   css/components.css
+   Reusable UI components (Buttons, Cards, Typography)
+   ======================================== */
+
+/* -------------------------
+   Typography Components
+   ------------------------- */
+
+/* Large, bold section headings */
+.section-title {
+    font-size: var(--font-size-3xl);
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-6);
+    line-height: 1.2;
+}
+
+/* Hero specific typography */
+.hero-title {
+    font-size: var(--font-size-4xl);
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-6);
+    max-width: 600px;
+}
+
+/* Excerpts (smaller, muted text) */
+.card-excerpt,
+.portfolio-excerpt {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-base);
+    margin-bottom: 0; /* Let the container handle bottom padding */
+}
+
+/* Card Titles */
+.card-title,
+.portfolio-title {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+}
+
+/* -------------------------
+   Buttons
+   ------------------------- */
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: var(--color-text-primary); /* White text as requested */
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); /* Soft green glow */
+}
+
+/* Smooth scale-down transform effect */
+.btn-primary:active {
+    transform: scale(0.96);
+}
+
+/* Secondary Button (used in Header Navigation) */
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* -------------------------
+   Cards
+   ------------------------- */
+
+/* Service Card Container */
+.service-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.service-card:hover {
+    transform: translateY(-4px); /* Translates upwards on hover */
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-primary); /* Subtle border highlight */
+}
+
+.card-icon {
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(52, 211, 153, 0.1); /* Very transparent green */
+    border-radius: var(--radius-md);
+}
+
+/* Portfolio Card (Image + Content) */
+.portfolio-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.portfolio-image-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+/* Slight zoom effect on the image when hovering the card */
+.portfolio-card:hover .portfolio-image {
+    transform: scale(1.05);
+}
+
+.portfolio-content {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.portfolio-link {
+    margin-top: var(--space-4);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    display: inline-block;
+    transition: color var(--transition-fast);
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus-visible {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
